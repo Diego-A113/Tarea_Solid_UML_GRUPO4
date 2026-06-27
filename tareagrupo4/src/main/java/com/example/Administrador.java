@@ -1,7 +1,7 @@
 package com.example;
 
 public class Administrador {
-    
+
     private int id;
     private String nombre;
 
@@ -14,10 +14,10 @@ public class Administrador {
     }
 
     public void editarServicio() {
-        
+
     }
 
     public void crearPoliticaCancelacion() {
-        
+
     }
 }

@@ -12,6 +12,10 @@ public class Reserva {
     private boolean esRecurrente;
     private FrecuenciaReserva frecuencia;
     private IMetodoPago metodoPago;
+    private Usuario cliente;
+    private Mascota mascota;
+    private List<IServicio> servicios;
+    private PoliticaCancelacion politicaCancelacion;
 
     public void confirmar() {
 
