@@ -2,9 +2,9 @@ package com.example;
 
 public class Cuidador {
 
-    public int id;
-    public String nombre;
-    public String especialidad;
+    private int id;
+    private String nombre;
+    private String especialidad;
 
     public void atenderMascotas() {
 
