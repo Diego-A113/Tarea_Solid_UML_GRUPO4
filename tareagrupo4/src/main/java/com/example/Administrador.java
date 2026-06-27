@@ -1,6 +1,7 @@
 package com.example;
 
 public class Administrador {
+    
     private int id;
     private String nombre;
 
