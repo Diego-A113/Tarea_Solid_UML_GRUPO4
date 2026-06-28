@@ -8,10 +8,10 @@ public class PoliticaCancelacion {
     private String descripcion;
 
     public double calcularReembolso() {
-
+        return porcentajeReembolso;
     }
 
-    public boolean esCancelable() {
-
+    public boolean esCancelable(int horasRestantes) {
+        return horasRestantes >= this.tiempoLimiteHoras;
     }
 }

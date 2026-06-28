@@ -11,10 +11,10 @@ public class AlertaSalud {
     private boolean atendida;
 
     public void registrar() {
-
+        System.out.println("Registrando...");
     }
 
     public void marcarAtendida() {
-
+        System.out.println("Atendiendo...");
     }
 }

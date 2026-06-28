@@ -1,5 +1,6 @@
 package com.example;
 
+import java.time.LocalTime;
 import java.util.List;
 
 public class Administrador {
@@ -8,19 +9,57 @@ public class Administrador {
     private String nombre;
     private List<Centro> centrosAdministrados;
 
-    public void crearPromocion() {
+    public void crearPromocion(Promocion promocion, Centro centro) {
+        if (!this.centrosAdministrados.contains(centro)) {
+            System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());
+            return;
+        }
 
+        centro.agregarPromocion(promocion);
+        System.out.println("¡Promoción agregada con éxito al centro: " + centro.getNombre() + "!");
     }
 
-    public void crearRestriccion() {
+    public void crearRestriccion(Restriccion restriccion, Centro centro) {
+        if (!this.centrosAdministrados.contains(centro)) {
+            System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());
+            return;
+        }
 
+        centro.agregarRestriccion(restriccion);
+        System.out.println("¡Restricción añadida con éxito al centro: " + centro.getNombre() + "!");
     }
 
-    public void editarServicio() {
+    public void crearPoliticaCancelacion(PoliticaCancelacion politica, Centro centro) {
+        if (!this.centrosAdministrados.contains(centro)) {
+            System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());
+            return;
+        }
 
+        centro.agregarPoliticaCancelacion(politica);
+        System.out.println("¡Política de cancelación asignada con éxito al centro: " + centro.getNombre() + "!");
     }
 
-    public void crearPoliticaCancelacion() {
+    public void registrarServicio(IServicio servicio, Centro centro) {
+        if (!this.centrosAdministrados.contains(centro)) {
+            System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());
+            return;
+        }
 
+        if (centro.getServicios().contains(servicio)) {
+            System.out.println("Error: El centro '" + centro.getNombre() + "' ya ofrece el servicio");
+            return;
+        }
+
+        centro.agregarServicio(servicio);
+        System.out.println("¡Servicio registrado con éxito en el centro: " + centro.getNombre() + "!");
+    }
+
+    public void actualizarHorario(LocalTime horaApertura, LocalTime horaCierre, Centro centro) {
+        if (!this.centrosAdministrados.contains(centro)) {
+            System.out.println("Error: Este administrador no gestiona el centro " + centro.getNombre());
+            return;
+        }
+
+        centro.setHorario(horaApertura, horaCierre);
     }
 }
